@@ -1,0 +1,44 @@
+<div class ='container'>
+<table class= "table table-bordered">
+    <thead>
+        <tr class= "table-danger" style="color: rgb(133, 129, 129);text-align: center;">
+            <th colspan="4" class="text: center">
+                Tabla de Gastos Actuales
+                <form action="{% url 'gastos_edit:fecha_gasto'  %}" method="POST">
+                    
+                    {% csrf_token %}
+                    <label for="exampleInputEmail1" class="form-label">Fecha Inicial</label>
+                    <input type="date" name="fecha_inicial">
+                    
+                    <label for="exampleInputEmail1" class="form-label">Fecha Final</label>
+                    <input type="date" name="fecha_final">
+                    
+                    <button type="submit" class="btn btn-secondary">Filtrar</button>
+                </form>
+                
+            </th>
+        </tr>
+    </thead> 
+    <tbody>
+        {% for gasto in gastos %}
+        <tr class="table-light" style="text-align: center;">
+            <td>
+                {{gasto.concepto}}
+            </td>
+            <td>
+                {{gasto.costo}}
+            </td>
+            <td>
+                {{gasto.categoria}}
+            </td>
+            <td>
+                <a href="{% url 'gastos_edit:eliminar' gasto.id %}" class="btn btn-success">eliminar </a>
+               
+            </td>
+            
+        </tr>
+     
+        {% endfor %}
+    </tbody>
+</table>
+</div>

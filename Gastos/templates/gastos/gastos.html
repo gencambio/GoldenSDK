@@ -1,0 +1,60 @@
+{% extends "ProyectoDraWeb/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+{% if "valido" in request.GET %}
+
+<p style = "color: #ffffff;"> Informacion enviada correctamente</p>
+
+{% endif %}
+
+</br>
+<div class ='card' style="width: 60%; margin: auto;">
+    <div class="card-body">
+<form action="/gastos/" method="POST" class = "row g-3" >
+    {% csrf_token %}
+
+    <div class="col-auto">
+        <label for="exampleInputEmail1" class="form-label">Concepto</label>
+        {{form.concepto}}
+    </div>
+
+    <div class="col-auto">
+        <label for="exampleInputEmail1" class="form-label">Costo</label>
+        {{form.costo}}
+    </div>
+
+    <div class="col-auto">
+        <label for="exampleInputEmail1" class="form-label">Categoria</label>
+        {{form.categoria}}
+    </div>
+
+    <div class="col-auto">
+        <label for="exampleInputEmail1" class="form-label">Proveedor</label>
+        {{form.proveedor}}
+    </div>
+
+    <div class="col-12" style="margin-top: 10px;margin-left: 1%;">
+    <button type="submit" class="btn btn-secondary">Guardar</button>
+    </div>
+
+</form>
+
+</div>
+
+
+</div>
+
+</br>
+
+{% include "tabla/tabla.html" %}
+</br>
+
+
+
+{% endblock %}
+
+
+    
