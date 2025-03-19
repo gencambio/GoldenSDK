@@ -10,7 +10,7 @@ def gastos(request):
     categorias = Categoria.objects.all()
     proveedor = Proveedor.objects.all()
     
-    form = GastoForm(initial ={"concepto":"luis"})
+    form = GastoForm()
    
     print(form)
     

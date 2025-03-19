@@ -12,46 +12,59 @@
      <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet"> 
      <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
      
-
     <!-- Styles -->
     <link href="{%static 'ProyectoDraWeb/css/gestion.css'%}" rel="stylesheet">
 </head>
 
 <body>
+   <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary" id="mainNav" style="background-color: white;">
+    <div class="container-fluid" style="margin: auto;">
+            <a class="navbar-brand" href="#">
+              <img src="{%static 'ProyectoDraWeb/img/logo_medina.png'%}" alt="Logo" width="300" height="84" class="d-inline-block align-text-top" style="margin-right: 50%;">
+            </a>
+           
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav mx-auto">
+                <li class="nav-item {% if request.path == '/ProyectoWebApp/' %} active {% endif %} px-lg-4" style="color: #373636;">
+                  <a class="nav-link text-uppercase text-expanded" href="{% url 'HomeA' %}">Inicio</a>
+                </li>
+           
+                <li class="nav-item {% if request.path == '/servicios/' %} active{% endif %} px-lg-4">
+                  <a class="nav-link text-uppercase text-expanded" href="{% url 'Gastos' %}">Gastos</a>
+                </li>
+           
+                <li class="nav-item {% if request.path == '/ingress/' %} active {% endif %} px-lg-4">
+                  <a class="nav-link text-uppercase text-expanded" href="{% url 'Ingresos' %}">Ingresos</a>
+                </li>
+           
+                <li class="nav-item {% if request.path == '/contacto/' %} active{% endif %} px-lg-4">
+                  <a class="nav-link text-uppercase text-expanded" href="#">Citas</a>
+                </li> 
+               
+              </ul>
+            </div>
+          </div>
+        </nav>
 
-    <h1 class="site-heading text-center text-pink d-none d-lg-block">
+    
       
-        <span class="site-heading-lower">Gestión Consultorio</span>
-      </h1>
+   
+      <div style="color: white;text-align: right;margin-right: 100px;">
+      {% if user.is_authenticated %}
+
+      Hola {{user.username}} &nbsp   <a href="{% url 'CerrarSesion'%}" style = "color: rgb(250, 58, 58);">Cerrar Sesion </a>
 
 
- <!-- Navbar -->
- <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Gestión de clientes</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav mx-auto">
-          <li class="nav-item {% if request.path == '/ProyectoWebApp/' %} active {% endif %} px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'Home' %}">Inicio</a>
-          </li>
-          <li class="nav-item {% if request.path == '/servicios/' %} active{% endif %} px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'Gastos' %}">Gastos</a>
-          </li>
-          <li class="nav-item {% if request.path == '/tienda/' %} active {% endif %} px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="#">Ingresos</a>
-          </li>
-          <li class="nav-item {% if request.path == '/contacto/' %} active{% endif %} px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="#">Citas</a>
-          </li>
-        
-         
-        </ul>
-      </div>
+      {% else %}
+      
+        <a href = "{% url 'Login'%}" style = "color: rgb(240, 59, 59);"> Login </a> &nbsp;  <a href="{% url 'Autenticacion'%}" style = "color: rgb(247, 80, 80);">Registrate</a>  
+      
+      {% endif %}
     </div>
-  </nav>
+
+
+ 
 
 
   {% block content %}

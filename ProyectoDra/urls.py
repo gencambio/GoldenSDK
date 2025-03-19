@@ -22,5 +22,8 @@ urlpatterns = [
     path('ProyectoDraWeb', include('ProyectoDraWeb.urls')),
     path('gastos/',include('Gastos.urls')),
     path('cuenta/',include('cuenta.urls')),
+    path('ingresos/',include('Ingresos.urls')),
+    path('autenticacion/',include('autenticacion.urls')),
+
 
 ]

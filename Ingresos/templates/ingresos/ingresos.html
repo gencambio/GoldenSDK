@@ -13,7 +13,7 @@
 </br>
 <div class ='card' style="width: 60%; margin: auto;">
     <div class="card-body">
-<form action="/gastos/" method="POST" class = "row g-3" >
+<form action="/ingresos/" method="POST" class = "row g-3" >
     {% csrf_token %}
 
     <div class="col-auto">
@@ -22,18 +22,23 @@
     </div>
 
     <div class="col-auto">
-        <label for="exampleInputEmail1" class="form-label">Costo</label>
-        {{form.costo}}
+        <label for="exampleInputEmail1" class="form-label">Valor</label>
+        {{form.valor}}
     </div>
 
     <div class="col-auto">
-        <label for="exampleInputEmail1" class="form-label">Categoria</label>
-        {{form.categoria}}
+        <label for="exampleInputEmail1" class="form-label">Tratamiento</label>
+        {{form.tratamiento}}
     </div>
 
     <div class="col-auto">
-        <label for="exampleInputEmail1" class="form-label">Proveedor</label>
-        {{form.proveedor}}
+        <label for="exampleInputEmail1" class="form-label">Cliente</label>
+        {{form.cliente}}
+    </div>
+    
+    <div class="col-auto">
+        <label for="exampleInputEmail1" class="form-label">Abono</label>
+        {{form.abono}}
     </div>
 
     <div class="col-12" style="margin-top: 10px;margin-left: 1%;">
@@ -47,8 +52,8 @@
 
 
 </br>
+{% include "tabla/tablaI.html" %}
 
-{% include "tabla/tabla.html" %}
 </br>
 
 

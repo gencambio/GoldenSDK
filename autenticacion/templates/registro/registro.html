@@ -1,0 +1,21 @@
+{% extends 'ProyectoDraWeb/base.html' %}
+
+{% load static%}
+
+{% load crispy_forms_tags %}
+
+{%block content %}
+
+<form method="post" action="" style="color: rgb(251, 105, 105);">
+
+    {% csrf_token %}
+
+    <div style="width: 75%; margin: auto;">
+    {{form|crispy}}
+
+    <button type="submit" class="btn btn-success">Enviar</button>
+    </div>
+
+</form>
+
+{% endblock %}

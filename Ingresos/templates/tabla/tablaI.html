@@ -4,8 +4,8 @@
 <table class= "table table-bordered">
     <thead>
         <tr class= "table-danger" style="color: rgb(133, 129, 129);text-align: center;">
-            <th colspan="4" class="text: center">
-                Tabla de Gastos Actuales
+            <th colspan="6" class="text: center">
+                Tabla de Ingresos Mes
                 <form action="{% url 'gastos_edit:fecha_gasto'  %}" method="POST">
                     
                     {% csrf_token %}
@@ -22,19 +22,25 @@
         </tr>
     </thead> 
     <tbody>
-        {% for gasto in gastos %}
+        {% for ingreso in ingresos %}
         <tr class="table-light" style="text-align: center;">
             <td>
-                {{gasto.concepto}}
+                {{ingreso.concepto}}
             </td>
             <td>
-                {{gasto.costo}}
+                {{ingreso.valor}}
             </td>
             <td>
-                {{gasto.categoria}}
+                {{ingreso.tratamiento}}
             </td>
             <td>
-                <a href="{% url 'gastos_edit:eliminar' gasto.id %}" class="btn btn-success">eliminar </a>
+                {{ingreso.cliente}}
+            </td>
+            <td>
+                {{ingreso.abono}}
+            </td>
+            <td>
+                <a href="#" class="btn btn-success">eliminar </a>
                
             </td>
             
