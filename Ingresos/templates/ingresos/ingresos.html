@@ -52,7 +52,13 @@
 
 
 </br>
+
+{% if request.user.is_authenticated %}
 {% include "tabla/tablaI.html" %}
+{% else %}
+Debes estar autenticado
+{% endif %}
+
 
 </br>
 

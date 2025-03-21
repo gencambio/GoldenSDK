@@ -38,9 +38,10 @@ def fecha_gasto(request):
     if request.method == "POST" :
         fecha_inicial = request.POST.get("fecha_inicial")
         fecha_final = request.POST.get("fecha_final")
-    print(fecha_inicial,'fecha')
+        categoria = request.POST.get("categoria")
+    #print(fecha_inicial,'fecha')
     #return redirect('Gastos',{'gastos':gasto})
-    gastos =  Gasto.objects.filter(created__gt = fecha_inicial, created__lt= fecha_final )
+    gastos =  Gasto.objects.filter(created__gt = fecha_inicial, created__lt= fecha_final, categoria__eq= categoria)
     #print(cuenta) #print(gastos1, "gastos1")
     #gastos = Gasto.objects.all()
     #print(gastos)

@@ -13,11 +13,6 @@ def ingresos(request):
     clientes = Cliente.objects.all()
     
     form = IngresoForm()
-    print(ingresos)
-    print(tratamientos)
-    print(clientes)
-   
-
 
     if request.method == "POST" :
 

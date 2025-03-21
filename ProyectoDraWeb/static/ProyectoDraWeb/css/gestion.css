@@ -85,16 +85,16 @@ p {
 }
 
 #mainNav .navbar-brand {
-  color: #384092;
-}
+  color: #b7b7bb;
+} 
 
 #mainNav .navbar-nav .nav-item .nav-link {
-  color: rgb(63, 60, 60);
+  color: rgb(228, 20, 20);
   font-weight: 800;
 }
 
 #mainNav .navbar-nav .nav-item.active .nav-link {
-  color: #373937;
+  color: #4e4a4a;
   text-decoration: underline;
 }
 
@@ -103,13 +103,14 @@ p {
     font-size: 0.9rem;
   }
   #mainNav .navbar-nav .nav-item .nav-link:hover {
-    color: rgba(78, 76, 76, 0.941);
+    color: rgba(237, 59, 59, 0.941);
     text-decoration: underline;
   }
   #mainNav .navbar-nav .nav-item.active .nav-link:hover {
-    color: #504f4f;
+    color: #db1010;
     text-decoration: underline;
   }
+  
 }
 
 .btn-xl {
@@ -229,7 +230,7 @@ p {
 }
 
 .footer {
-   background-color: rgba(35, 35, 207, 0.973);
+   background-color: rgba(246, 246, 250, 0.973);
 }
 
 

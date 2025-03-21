@@ -10,12 +10,8 @@ def gastos(request):
     categorias = Categoria.objects.all()
     proveedor = Proveedor.objects.all()
     
-    form = GastoForm()
-   
-    print(form)
+    form = GastoForm() 
     
-    
-
     if request.method == "POST" :
 
         formulario_contacto = GastoForm(data=request.POST)
