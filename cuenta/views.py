@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from Gastos.models import Gasto,Categoria,Proveedor
+from Ingresos.models import Ingreso
 import datetime
 
 from Gastos.forms import GastoForm
@@ -53,3 +54,11 @@ def fecha_gasto(request):
     return render(request, "gastos/gastos.html",{"gastos":gastos,"categorias":categorias, "proveedores":proveedor, "form": form})
 
 
+def eliminar_ingreso(request, ingreso_id):
+   # carro = Carro(request)   # crea el carro 
+
+    ingreso  = Ingreso.objects.get(id = ingreso_id)
+    ingreso.delete()
+  
+
+    return redirect('Ingresos')

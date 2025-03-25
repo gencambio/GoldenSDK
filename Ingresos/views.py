@@ -9,7 +9,9 @@ def ingresos(request):
    
 
     ingresos =  Ingreso.objects.all()
+    print(ingresos[0].tratamiento)
     tratamientos = Tratamiento.objects.all()
+    print(tratamientos)
     clientes = Cliente.objects.all()
     
     form = IngresoForm()
@@ -35,6 +37,6 @@ def ingresos(request):
             return redirect("/ingresos/?fallido")
 
 
-    return render(request, "ingresos/ingresos.html",{"ingresos":ingresos,"tratamientos":tratamientos, "clientes":clientes, "form": form})
+    return render(request, "ingresos/ingresos.html",{"ingresos":ingresos, "form": form})
 
    
